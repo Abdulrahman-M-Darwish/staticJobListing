@@ -28,7 +28,7 @@ const displayJobs = (arr = []) => {
   arr.forEach((job, i) => {
     jobsContainer.innerHTML += `
   <div class="job flex flex-col ${job.featured ? "featured" : ""}">
-    <img src=${job.logo} alt=${job.company} />
+    <img src=${job.logo} alt="${job.company}" />
     <div class="about-job flex flex-col">
       <div class="title flex items-center">
         <span>${job.company}</span>
