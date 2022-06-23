@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap");
+
+:root {
+  --DesaturatedDarkCyan: hsl(180, 29%, 50%);
+  --LightGrayishCyan1: hsl(180, 52%, 96%); /* (Background) */
+  --LightGrayishCyan2: hsl(180, 31%, 95%); /* (Filter Tablets) */
+  --DarkGrayishCyan: hsl(180, 8%, 52%);
+  --VeryDarkGrayishCyan: hsl(180, 14%, 20%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+  background-color: var(--LightGrayishCyan1);
+  font-size: 15px;
+}
+
+.banner {
+  height: 160px;
+  background-color: var(--DesaturatedDarkCyan);
+  background-image: url("../images/bg-header-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+@media screen and (min-width: 567px) {
+  .banner {
+    background-image: url("../images/bg-header-desktop.svg");
+  }
+}
+
+.tags {
+  background-color: white;
+  transform: translateY(-50%);
+  width: calc(100% - 48px);
+  padding: 20px;
+  margin: 0 auto;
+  transition: 0.7s;
+}
+
+.tags.hide {
+  transform: translateY(0%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tags .tags-container {
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.tags .tag {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.tags .clear {
+  color: var(--DarkGrayishCyan);
+  transition: 0.3s;
+}
+
+.tags .clear:hover {
+  color: var(--DesaturatedDarkCyan);
+  text-decoration: underline;
+}
+
+.tags .tag span {
+  background-color: hsla(180, 29%, 50%, 0.1);
+  color: var(--DesaturatedDarkCyan);
+  font-weight: 700;
+  padding: 8px;
+}
+
+.tags .tag .delete {
+  background-color: var(--DesaturatedDarkCyan);
+  padding: 8px;
+  transition: 0.3s;
+}
+
+.tags .tag .delete img {
+  pointer-events: none;
+}
+
+.tags .tag .delete:hover {
+  background-color: var(--VeryDarkGrayishCyan);
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.jobs {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 50px 24px;
+  gap: 32px;
+}
+
+@media (min-width: 992px) {
+  .jobs {
+    padding: 50px 165px;
+  }
+}
+
+.job {
+  background-color: #fff;
+  padding: 0 16px 16px;
+  border-radius: 6px;
+}
+
+@media (min-width: 576px) {
+  .job {
+    padding: 16px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+.job.featured {
+  border-left: 5px solid var(--DesaturatedDarkCyan);
+}
+
+.job img {
+  width: 40px;
+  transform: translateY(-50%);
+}
+
+@media (min-width: 576px) {
+  .job img {
+    transform: translateY(0);
+    width: auto;
+  }
+}
+
+.job .about-job {
+  gap: 16px;
+  position: relative;
+}
+
+@media (min-width: 576px) {
+  .job .about-job {
+    margin-right: auto;
+  }
+}
+
+.job .about-job .title {
+  gap: 16px;
+}
+
+.job .about-job .title > span {
+  color: var(--DesaturatedDarkCyan);
+  font-weight: 700;
+}
+
+.job .about-job .title .status {
+  gap: 8px;
+}
+
+.job .about-job .title .status span {
+  color: white;
+  border-radius: 30px;
+  display: block;
+  padding: 6px 10px 3px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--LightGrayishCyan1);
+}
+
+.job .about-job .title .status span.new {
+  background-color: var(--DesaturatedDarkCyan);
+}
+
+.job .about-job .title .status span.featured {
+  background-color: var(--VeryDarkGrayishCyan);
+}
+
+.job .about-job .role {
+  font-weight: 700;
+  color: var(--VeryDarkGrayishCyan);
+}
+
+.job .about-job .location-time {
+  gap: 24px;
+}
+
+.job .about-job .location-time span {
+  color: #9a9c9e;
+  position: relative;
+}
+
+.job .about-job .location-time span:not(:last-of-type)::after {
+  content: "";
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  width: 3px;
+  height: 3px;
+  background-color: #9a9c9e;
+  border-radius: 50%;
+  transform: translate(50%, -50%);
+}
+
+.job .about-job::after {
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #9a9c9e;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 576px) {
+  .job .about-job::after {
+    display: none;
+  }
+}
+
+.job .skills {
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.job .skills span {
+  padding: 8px;
+  background-color: hsla(180, 29%, 50%, 0.1);
+  color: var(--DesaturatedDarkCyan);
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+}
